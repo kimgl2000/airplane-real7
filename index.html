@@ -33,7 +33,7 @@
 
  .search-container {
   position: absolute;
-  top: 34%;
+  top: 30%;
 left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -43,9 +43,9 @@ left: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 0;
   border-radius: 50px;
-  width: 1000vw;
+  width: 80vw;
 max-width: none;
-  height: 100px;
+  height: 50px;
 }
 
 .search-input {
@@ -53,8 +53,8 @@ flex: 1;
   height: 100%;
   border: none;
   border-radius: 50px;
-  font-size: 32px;
-  padding: 0 32px;
+  font-size: 16px;
+  padding: 0 16px;
   outline: none;
   box-shadow: none;
 }
@@ -86,22 +86,21 @@ box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
   </style>
 </head>
 <body>
-
-  <div class="background">
+  <div class="screen active" id="screen1" style="position: relative;">
+    <img src="airplane 1 logo.png" alt="Airplane 1" style="width: 100%; height: auto;">
     <div class="search-container">
       <input type="text" class="search-input" placeholder="Search..." onkeydown="if(event.key === 'Enter') searchAction()">
     </div>
   </div>
 
-  <div class="image-container" id="airplane 2">
+  <div class="image-container" id="screen2">
     <img src="airplane 2.png" alt="Airplane 2">
   </div>
 
   <script>
     function searchAction() {
-   document.querySelector('.background').style.display = 'none';
-    const imgContainer = document.getElementById('airplane 2');
-    imgContainer.style.display = 'block';
+  document.getElementById('screen1').classList.remove('active');
+document.getElementById('screen2').classList.add('active');
     imgContainer.scrollTop = 0;
 window.scrollTo(0, 0);
     }
