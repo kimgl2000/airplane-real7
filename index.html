@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Airplane Search">
+  <title>Airplane Search</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('airplane 1 logo.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .background {
+      background-image: url('airplane 1 logo.png');
+      background-size: cover; 
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+ .search-container {
+  position: absolute;
+  top: 34%;
+left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  border-radius: 50px;
+  width: 1000vw;
+max-width: none;
+  height: 100px;
+}
+
+.search-input {
+flex: 1;
+  height: 100%;
+  border: none;
+  border-radius: 50px;
+  font-size: 32px;
+  padding: 0 32px;
+  outline: none;
+  box-shadow: none;
+}
+
+.search-input:focus {
+border-color: #4CAF50;
+box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+.search-button {
+ display: none;
+    }
+
+    .image-container {
+      display: none;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+
+    .image-container img {
+     position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search..." onkeydown="if(event.key === 'Enter') searchAction()">
+    </div>
+  </div>
+
+  <div class="image-container" id="airplane 2">
+    <img src="airplane 2.png" alt="Airplane 2">
+  </div>
+
+  <script>
+    function searchAction() {
+   document.querySelector('.background').style.display = 'none';
+    const imgContainer = document.getElementById('airplane 2');
+    imgContainer.style.display = 'block';
+    imgContainer.scrollTop = 0;
+window.scrollTo(0, 0);
+    }
+  </script>
+
+</body>
+</html>
